@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    min-height: 100vh;
+    background: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card{
+    width: 100%;
+    max-width: 1200px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+  
+  .card h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .div-contato{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .div-contato input{
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #2d2d2d;
+    color: white;
+  }
+  
+  .div-contato input::placeholder{
+    color: #bcbcbc;
+  }
+  
+  .btn-enviar button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-enviar {
+    padding-bottom: 20px;
+  }
+  
+  .div-contato button:hover{
+    background: #6d28d9;
+  }
+  
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+  }
+  
+  thead{
+    background: #7c3aed;
+  }
+  
+  thead th{
+    padding: 15px;
+    color: white;
+  }
+  
+  tbody{
+    background: #2b2b2b;
+  }
+  
+  tbody td{
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid #444;
+  }
+  
+  tbody img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  @media(max-width: 900px){
+    table{
+      display: block;
+      overflow-x: auto;
+    }
+  }

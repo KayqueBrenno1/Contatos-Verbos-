@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <script src="./app.js" defer type="module"></script>
     <title>Contatos</title>
 </head>
+
 <body>
-    
+    <main class="container">
+
+        <div class="card">
+            <h1>Cadastro de Contatos</h1>
+
+            <div class="div-contato">
+                <input type="text" placeholder="Nome" id="nome">
+                <input type="text" placeholder="Celular" id="telefone">
+                <input type="text" placeholder="URL da Foto" id="foto">
+                <input type="email" placeholder="E-mail" id="email">
+                <input type="text" placeholder="Logradouro" id="logradouro">
+                <input type="text" placeholder="Cidade" id="cidade">
+            </div>
+
+            <div class="btn-enviar">
+                <button id="btn-enviar" type="submit">
+                    Enviar
+                </button>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="" alt="Foto do contato">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 </body>
+
 </html>
