@@ -59,7 +59,10 @@ async function put(id) {
     document.getElementById('btn-enviar').textContent = 'Atualizar'
 }
 
-async function del(id) {
+async function del(id, nome) {
+    const confirmar = confirm(`Tem certeza que deseja excluir \"${nome}\"?`)
+    if (!confirmar) return
+
     await deleteContato(id)
     await get()
 }
@@ -88,26 +91,27 @@ function criarLinha(contato) {
     imagem.width = 80
     foto.appendChild(imagem)
 
+    acoes.classList.add('acoes')
     const atualizar = document.createElement('button')
     atualizar.className = 'btn-acao btn-editar'
     atualizar.title = 'Editar contato'
-    atualizar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>`
+    atualizar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>`
     atualizar.addEventListener('click', () => put(contato.id))
 
     const deletar = document.createElement('button')
     deletar.className = 'btn-acao btn-excluir'
     deletar.title = 'Excluir contato'
-    deletar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`
-    deletar.addEventListener('click', () => del(contato.id))
+    deletar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`
+    deletar.addEventListener('click', () => del(contato.id, contato.nome))
 
     acoes.append(atualizar, deletar)
-    tr.replaceChildren(id, nome, foto, email, celular, endereco, cidade, acoes)
+    tr.replaceChildren(id, foto, nome, celular, email, endereco, cidade, acoes)
 
     return tr
 }
 
 
-document.getElementById('salvar')
+document.getElementById('btn-enviar')
     .addEventListener('click', salvarContato)
 
 document.addEventListener('DOMContentLoaded', get)

@@ -106,6 +106,15 @@
     border-radius: 50%;
     object-fit: cover;
   }
+
+  .btn-acao.btn-editar {
+    background-color: #3b82f6;
+    margin-right: 10px;
+  }
+
+  .btn-acao.btn-excluir {
+    background-color: #ef4444;
+  }
   
   @media(max-width: 900px){
     table{
