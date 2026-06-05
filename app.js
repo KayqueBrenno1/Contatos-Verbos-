@@ -60,7 +60,7 @@ async function put(id) {
 }
 
 async function del(id, nome) {
-    const confirmar = confirm(`Tem certeza que deseja excluir \"${nome}\"?`)
+    const confirmar = confirm(`Tem certeza que deseja excluir "${nome}"?`)
     if (!confirmar) return
 
     await deleteContato(id)
